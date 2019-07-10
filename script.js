@@ -69,7 +69,7 @@ var handlers = {
   changeTodo: function () {
     var changeTodoPosition = document.getElementById("changePositionTodo");
     var changeTodoText = document.getElementById("changeTodoText");
-    todoList.changeTodo(changeTodoPosition.valueAsNumber -1 , changeTodoText.value);
+    todoList.changeTodo(changeTodoPosition.valueAsNumber - 1, changeTodoText.value);
     changeTodoText.value = "";
     changeTodoPosition.value = "";
     view.displayTodos();
@@ -101,7 +101,7 @@ var view = { // object to deal with the client ui
       var space = ". ";
 
       if (todo.completed) {
-        todoLi.textContent = (position + 1) + space +  completed + todoText + " ";
+        todoLi.textContent = (position + 1) + space + completed + todoText + " ";
       } else {
         todoLi.textContent = (position + 1) + space + notCompleted + todoText + " ";
       }
