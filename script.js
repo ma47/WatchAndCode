@@ -89,7 +89,7 @@ var handlers = {
 var view = { // object to deal with the client ui
   displayTodos: function () {
     //select the html ul and make it empty
-    var todoUl = document.querySelector("ul");
+    var todoUl = document.querySelector("ol");
     todoUl.innerHTML = "";
     var completed = "(x) ";
     var notCompleted = "( ) "
@@ -98,12 +98,12 @@ var view = { // object to deal with the client ui
     todoList.todos.forEach(function (todo, position) {
       var todoLi = document.createElement("li");
       var todoText = todo.todoText;
-      var space = ". ";
+      var space = " ";
 
       if (todo.completed) {
-        todoLi.textContent = (position + 1) + space + completed + todoText + " ";
+        todoLi.textContent = space + completed + todoText + space;
       } else {
-        todoLi.textContent = (position + 1) + space + notCompleted + todoText + " ";
+        todoLi.textContent = space + notCompleted + todoText + space;
       }
 
       todoLi.id = position;
@@ -121,7 +121,7 @@ var view = { // object to deal with the client ui
   //Event delegation(design pattern):
   setUpEventListeners: function () {
     // on click on one of the items in ul we get info of the click event, then from info we get the parent ID of delete button if it was clicked.
-    var todoUl = document.querySelector("ul");
+    var todoUl = document.querySelector("ol");
     todoUl.addEventListener("click", function (event) {
       console.log(event.target.parentNode.id);
 
